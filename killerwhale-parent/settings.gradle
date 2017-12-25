@@ -1,0 +1,20 @@
+/*如果要让 Gradle 支持多
+构建，只需为你的项目确定一个 根模块项目 并且在根模块项目下添加 settings.gradle 文件用以描述模块（项目）关系
+
+include 'base','main'
+
+这里将模块（项目）名称路径的字符串以数组的形式传递给了include函数，Gradle 会以相对于当前目录按照 include 给定的模块（项目）路径查找对应的子模块，如果要声明的模块（项目）有多个层次可以用:进行描述，假设main下面又分了Alpha,Bravo 那么声明方式则按如下方式书写
+
+include 'base','main:Alpha','main:Bravo'
+
+这里的 settings 文件实际上是对应的 Settings 接口，Settings 接口中提供的函数在本脚本中都是可用的，具体细节请查阅 >Settings接口DSL https://link.jianshu.com/?t=https://docs.gradle.org/current/dsl/< 文档进行了解。
+
+在构建的 初始化阶段，Gradle 会读取这个文件，并创建一个 Settings 类型的实例。Gradle 会依据此文件进行多模块项目构建，默认情况下 Gradle 会从同级的 master 目录下寻找此文件，如果未找到则会去父级目录寻找。如果搜寻不到 settings 文件，那么 Gradle 会把模块当做单独构建的项目去执行单独构建。这里 Gradle 提供了一个命令行参数 -u 或 --no-search-upward 来控制 Gradle 不去父目录搜寻 settings 文件。
+
+作者：PKAQ
+链接：https://www.jianshu.com/p/ef269c82104d
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。*/
+rootProject.name = 'killerwhale-parent'
+include 'killerwhale-sso'
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no"/>
+    <title>Default Title</title>
+    <link href="/webjars/materializecss/0.96.0/css/materialize.min.css" type="text/css" rel="stylesheet"
+          media="screen,projection"/>
+</head>
+<body>
+<!--语言下拉框-->
+<ul id="lang-dropdown" class="dropdown-content">
+    <li><a href="?lang=en_US">English</a></li>
+    <li><a href="?lang=zh_CN">China(简体中文)</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper indigo">
+        <ul class="right">
+            <li>
+                <a class="dropdown-button" href="#!" data-activates="lang-dropdown">
+                    <i class="mdi-action-language right"></i>Lang
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<section layout:fragment="content">
+    <p>Page Content goes here</p>
+</section>
+<script src="/webjars/jquery/3.2.1/dist/jquery.min.js"></script>
+<script src="/webjars/materializecss/0.96.0/js/materialize.min.js"></script>
+<script>
+    $(".dropdown-button").dropdown();
+</script>
+</body>
+</html>

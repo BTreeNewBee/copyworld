@@ -1,0 +1,37 @@
+
+allprojects {
+    group 'com.copyworld.killerwhale'
+    version '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+
+    //变量， 等同于maven中的properties
+    ext {
+        springBootVersion = '2.0.0.M7'
+    }
+
+    //插件定义
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    //jdk级别
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    //gradle编译报乱码问题
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    //仓库定义
+    repositories {
+        //本地仓库
+        mavenLocal()
+        //中央仓库
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+
+}
