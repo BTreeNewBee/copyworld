@@ -1,0 +1,18 @@
+github:
+  client:
+    clientId: be9f84b91385e05f3e71
+    clientSecret: d038d7bb98e598b4570588151330363010e5f4f0
+    #获取token的地址
+    accessTokenUri: https://github.com/login/oauth/access_token
+    #登陆之后询问的地址，只是第一次会有
+    userAuthorizationUri: https://github.com/login/oauth/authorize
+    #请求参数以什么样的方式跟随
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+    #pre-established-redirect-uri: http://localhost:8090/login/github
+    #registered-redirect-uri: http://localhost:8090/login/github
+    #use-current-uri: false
+resource:
+  userInfoUri: https://api.github.com/user
+server:
+  port: 8090

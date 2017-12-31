@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="layout/default">
+      layout:decorate="~{layout/default}">
 <head lang="en">
     <title>Login</title>
 </head>
@@ -31,11 +31,10 @@
                         <i class="mdi-content-send right">Submit</i>
                     </button>
                 </div>
-                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <!--<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
             </form>
         </div>
     </div>
 </div>
-<span th:text="|Hello thymeleaf a b|">Hello html</span>
 </body>
 </html>
