@@ -2,14 +2,15 @@
  * Copyright (C), 1995-2017, 没钱有限公司
  * FileName: JWTAuthenticationFilter
  * Author:   Neo Geng
- * Date:     2017/12/28 17:50
- * Description: 拦截请求，解析出JWT
+ * Date:     2017/12/27 11:11
+ * Description: JWT（Json Web Token）
  * History:
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.copyworld.killerwhale.sso.authentication;
+package com.copyworld.killerwhale.sso.sdk.authentication.filter;
 
+import com.copyworld.killerwhale.sso.sdk.authentication.util.JwtUtils;
 import io.jsonwebtoken.Claims;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -26,14 +27,13 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * 〈拦截请求，解析出JWT〉
- *
+ * 〈拦截请求，解析出JWT（Json Web Token）〉
+ * 为了兼容各种不同的运行环境和版本,只执行一次过滤
  * @author Neo Geng
  * Date 2017/12/28
  * @since 1.0.0
  */
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
-
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -59,3 +59,4 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
     }
 
 }
+

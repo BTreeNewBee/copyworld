@@ -8,13 +8,14 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.copyworld.killerwhale.sso.authentication;
+package com.copyworld.killerwhale.sso.sdk.authentication.util;
 
+import com.copyworld.killerwhale.sso.sdk.authentication.Constant;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.apache.tomcat.util.codec.binary.Base64;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.spec.SecretKeySpec;
 import java.security.Key;
@@ -22,7 +23,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * 〈〉
+ * 〈JWT工具类〉
  *
  * @author Neo Geng
  * Date 2017/12/28
